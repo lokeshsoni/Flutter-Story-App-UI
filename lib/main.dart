@@ -1,7 +1,9 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+
 import 'customIcons.dart';
 import 'data.dart';
-import 'dart:math';
 
 void main() => runApp(MaterialApp(
       home: MyApp(),
@@ -10,7 +12,7 @@ void main() => runApp(MaterialApp(
 
 class MyApp extends StatefulWidget {
   @override
-  _MyAppState createState() => new _MyAppState();
+  _MyAppState createState() => _MyAppState();
 }
 
 var cardAspectRatio = 12.0 / 16.0;
@@ -44,7 +46,7 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(
+                padding: EdgeInsets.only(
                     left: 12.0, right: 12.0, top: 30.0, bottom: 8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -92,7 +94,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 20.0),
+                padding: EdgeInsets.only(left: 20.0),
                 child: Row(
                   children: <Widget>[
                     Container(
@@ -156,7 +158,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 20.0),
+                padding: EdgeInsets.only(left: 20.0),
                 child: Row(
                   children: <Widget>[
                     Container(
@@ -213,7 +215,7 @@ class CardScrollWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new AspectRatio(
+    return AspectRatio(
       aspectRatio: widgetAspectRatio,
       child: LayoutBuilder(builder: (context, contraints) {
         var width = contraints.maxWidth;
@@ -228,7 +230,7 @@ class CardScrollWidget extends StatelessWidget {
         var primaryCardLeft = safeWidth - widthOfPrimaryCard;
         var horizontalInset = primaryCardLeft / 2;
 
-        List<Widget> cardList = new List();
+        List<Widget> cardList = List();
 
         for (var i = 0; i < images.length; i++) {
           var delta = i - currentPage;
@@ -279,8 +281,8 @@ class CardScrollWidget extends StatelessWidget {
                               height: 10.0,
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 12.0, bottom: 12.0),
+                              padding:
+                                  EdgeInsets.only(left: 12.0, bottom: 12.0),
                               child: Container(
                                 padding: EdgeInsets.symmetric(
                                     horizontal: 22.0, vertical: 6.0),
